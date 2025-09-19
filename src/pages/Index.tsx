@@ -1,9 +1,11 @@
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Header } from "@/components/Header";
 import { ServiceCard } from "@/components/ServiceCard";
 import { AIChat } from "@/components/AIChat";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { 
   CreditCard, 
   FileText, 
@@ -21,24 +23,29 @@ import {
 import heroImage from "@/assets/hero-illustration.jpg";
 
 const Index = () => {
+  const navigate = useNavigate();
+  const { translate } = useLanguage();
+  
   const mainServices = [
     {
-      title: "Aadhaar Services",
+      title: translate("Aadhaar Services"),
       description: "Update details, download e-Aadhaar, check enrollment status, and book appointments",
       icon: <CreditCard className="h-5 w-5" />,
       category: "Identity",
       estimatedTime: "5-10 min",
       status: "active" as const,
-      isPopular: true
+      isPopular: true,
+      onClick: () => navigate("/services/aadhaar")
     },
     {
-      title: "PAN Card Services", 
+      title: translate("PAN Card Services"), 
       description: "Apply for new PAN, check status, download e-PAN, and update PAN information",
       icon: <FileText className="h-5 w-5" />,
       category: "Tax",
       estimatedTime: "15-20 days",
       status: "active" as const,
-      isPopular: true
+      isPopular: true,
+      onClick: () => navigate("/services/pan")
     },
     {
       title: "Income Tax Filing",
@@ -104,9 +111,11 @@ const Index = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="gradient-primary hover:shadow-elevated transition-smooth">
-                  Explore Services
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                <Button size="lg" className="gradient-primary hover:shadow-elevated transition-smooth" asChild>
+                  <Link to="/services">
+                    Explore Services
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
                 </Button>
                 <Button variant="outline" size="lg" className="gap-2">
                   <Smartphone className="h-4 w-4" />
@@ -188,9 +197,11 @@ const Index = () => {
           </div>
 
           <div className="text-center mt-8">
-            <Button variant="outline" size="lg" className="gap-2">
-              View All Services
-              <ArrowRight className="h-4 w-4" />
+            <Button variant="outline" size="lg" className="gap-2" asChild>
+              <Link to="/services">
+                View All Services
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </Button>
           </div>
         </section>

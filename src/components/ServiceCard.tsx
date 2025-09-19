@@ -11,6 +11,8 @@ interface ServiceCardProps {
   category: string;
   estimatedTime?: string;
   isPopular?: boolean;
+  className?: string;
+  onClick?: () => void;
 }
 
 export const ServiceCard = ({ 
@@ -20,7 +22,9 @@ export const ServiceCard = ({
   status = 'active', 
   category, 
   estimatedTime,
-  isPopular = false 
+  isPopular = false,
+  className = "",
+  onClick
 }: ServiceCardProps) => {
   const getStatusIcon = () => {
     switch (status) {
@@ -49,7 +53,10 @@ export const ServiceCard = ({
   };
 
   return (
-    <Card className="group relative overflow-hidden transition-smooth hover:shadow-elevated hover:-translate-y-1 gradient-card border-border/50">
+    <Card 
+      className={`group relative overflow-hidden transition-smooth hover:shadow-elevated hover:-translate-y-1 gradient-card border-border/50 cursor-pointer ${className}`}
+      onClick={onClick}
+    >
       {isPopular && (
         <div className="absolute top-3 right-3 z-10">
           <Badge className="gradient-accent text-accent-foreground font-medium">
