@@ -142,18 +142,19 @@ export const AIChat = () => {
     return (
       <Button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 h-14 w-14 rounded-full gradient-primary shadow-elevated hover:shadow-glow transition-smooth animate-pulse-soft"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 h-12 w-12 sm:h-14 sm:w-14 rounded-full gradient-primary shadow-elevated hover:shadow-glow transition-smooth animate-pulse-soft"
         size="lg"
       >
-        <MessageCircle className="h-6 w-6" />
+        <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6" />
       </Button>
     );
   }
 
   return (
     <Card className={cn(
-      "fixed bottom-6 right-6 w-96 h-[500px] shadow-elevated transition-smooth z-50",
-      isMinimized && "h-16"
+      "fixed bottom-4 right-4 w-80 sm:w-96 h-[85vh] sm:h-[600px] max-h-[600px] shadow-elevated transition-all duration-300 z-50",
+      "sm:bottom-6 sm:right-6",
+      isMinimized && "h-14 sm:h-16"
     )}>
       <CardHeader className="flex flex-row items-center justify-between p-4 bg-gradient-primary rounded-t-lg">
         <div className="flex items-center gap-3">
@@ -189,45 +190,45 @@ export const AIChat = () => {
       </CardHeader>
 
       {!isMinimized && (
-        <CardContent className="p-0 flex flex-col h-full">
+        <CardContent className="p-0 flex flex-col h-full min-h-0">
           {/* Messages Area */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-background/50">
+          <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-3 sm:space-y-4 bg-background/50 min-h-0">
             {messages.map((message) => (
               <div key={message.id} className={cn(
                 "flex gap-3",
                 message.sender === 'user' ? "justify-end" : "justify-start"
               )}>
-                <div className={cn(
-                  "flex gap-2 max-w-[80%]",
-                  message.sender === 'user' ? "flex-row-reverse" : "flex-row"
-                )}>
-                  <div className={cn(
-                    "h-8 w-8 rounded-full flex items-center justify-center shrink-0 mt-1",
-                    message.sender === 'user' 
-                      ? "bg-primary text-primary-foreground" 
-                      : "bg-secondary text-secondary-foreground"
-                  )}>
-                    {message.sender === 'user' ? 
-                      <User className="h-4 w-4" /> : 
-                      <Bot className="h-4 w-4" />
-                    }
+                 <div className={cn(
+                   "flex gap-2 max-w-[85%] sm:max-w-[80%]",
+                   message.sender === 'user' ? "flex-row-reverse" : "flex-row"
+                 )}>
+                   <div className={cn(
+                     "h-6 w-6 sm:h-8 sm:w-8 rounded-full flex items-center justify-center shrink-0 mt-1",
+                     message.sender === 'user' 
+                       ? "bg-primary text-primary-foreground" 
+                       : "bg-secondary text-secondary-foreground"
+                   )}>
+                     {message.sender === 'user' ? 
+                       <User className="h-3 w-3 sm:h-4 sm:w-4" /> : 
+                       <Bot className="h-3 w-3 sm:h-4 sm:w-4" />
+                     }
                   </div>
-                  <div className={cn(
-                    "rounded-lg p-3 text-sm",
-                    message.sender === 'user'
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-card text-card-foreground shadow-card border"
-                  )}>
-                    <p className="leading-relaxed">{message.content}</p>
-                    {message.suggestions && (
-                      <div className="flex flex-wrap gap-2 mt-3">
+                   <div className={cn(
+                     "rounded-lg p-2 sm:p-3 text-xs sm:text-sm",
+                     message.sender === 'user'
+                       ? "bg-primary text-primary-foreground"
+                       : "bg-card text-card-foreground shadow-card border"
+                   )}>
+                     <p className="leading-relaxed">{message.content}</p>
+                     {message.suggestions && (
+                       <div className="flex flex-wrap gap-1 sm:gap-2 mt-2 sm:mt-3">
                         {message.suggestions.map((suggestion, index) => (
-                          <Badge
-                            key={index}
-                            variant="outline"
-                            className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-smooth text-xs"
-                            onClick={() => handleSuggestionClick(suggestion)}
-                          >
+                           <Badge
+                             key={index}
+                             variant="outline"
+                             className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-smooth text-[10px] sm:text-xs py-0.5 px-1.5"
+                             onClick={() => handleSuggestionClick(suggestion)}
+                           >
                             {suggestion}
                           </Badge>
                         ))}
@@ -239,14 +240,14 @@ export const AIChat = () => {
             ))}
             
             {isTyping && (
-              <div className="flex gap-3">
-                <div className="h-8 w-8 rounded-full bg-secondary flex items-center justify-center">
-                  <Bot className="h-4 w-4" />
+              <div className="flex gap-2 sm:gap-3">
+                <div className="h-6 w-6 sm:h-8 sm:w-8 rounded-full bg-secondary flex items-center justify-center">
+                  <Bot className="h-3 w-3 sm:h-4 sm:w-4" />
                 </div>
-                <div className="bg-card p-3 rounded-lg border shadow-card">
+                <div className="bg-card p-2 sm:p-3 rounded-lg border shadow-card">
                   <div className="flex items-center gap-1">
                     <Loader2 className="h-3 w-3 animate-spin" />
-                    <span className="text-sm text-muted-foreground">Assistant is typing...</span>
+                    <span className="text-xs sm:text-sm text-muted-foreground">Assistant is typing...</span>
                   </div>
                 </div>
               </div>
@@ -255,14 +256,14 @@ export const AIChat = () => {
           </div>
 
           {/* Input Area */}
-          <div className="border-t p-4 bg-card">
+          <div className="border-t p-3 sm:p-4 bg-card">
             <div className="flex items-center gap-2">
               <Input
                 placeholder="Ask about government services..."
                 value={inputMessage}
                 onChange={(e) => setInputMessage(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-                className="flex-1"
+                className="flex-1 text-xs sm:text-sm"
               />
               <Button
                 variant="ghost"
