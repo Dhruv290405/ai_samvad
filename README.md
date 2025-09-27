@@ -1,4 +1,4 @@
-# 🇮🇳 E-Governance Portal - भारत सरकार | Digital India
+# Smart E-Governance Portal - भारत सरकार | Digital India
 
 A comprehensive e-governance portal with multilingual support for Indian government services, built with modern web technologies.
 
