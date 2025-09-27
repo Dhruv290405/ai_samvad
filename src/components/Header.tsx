@@ -112,9 +112,32 @@ export const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Button variant="ghost" size="sm">
-              <User className="h-4 w-4" />
-            </Button>
+            {/* Profile/Login Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="sm">
+                  <User className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-56">
+                <DropdownMenuItem onClick={() => navigate('/login')}>
+                  <User className="h-4 w-4 mr-2" />
+                  {translate('Sign In')}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => navigate('/register')}>
+                  <User className="h-4 w-4 mr-2" />
+                  {translate('Create Account')}
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <User className="h-4 w-4 mr-2" />
+                  {translate('My Profile')}
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <User className="h-4 w-4 mr-2" />
+                  {translate('My Applications')}
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </div>
 

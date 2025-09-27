@@ -102,7 +102,7 @@ const Index = () => {
                   Digital India Initiative
                 </Badge>
                 <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
-                  Smart <span className="gradient-primary bg-clip-text text-transparent">E-Governance</span> Portal
+                  Smart <span className="text-primary font-bold">E-Governance</span> Portal
                 </h1>
                 <p className="text-xl text-muted-foreground leading-relaxed">
                   Your single-window platform for all government services. Transparent, 

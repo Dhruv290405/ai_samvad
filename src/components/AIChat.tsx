@@ -121,6 +121,13 @@ export const AIChat = () => {
     setInputMessage(suggestion);
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleSendMessage();
+    }
+  };
+
   const handleVoiceInput = () => {
     if ('webkitSpeechRecognition' in window) {
       const recognition = new (window as any).webkitSpeechRecognition();
@@ -152,7 +159,7 @@ export const AIChat = () => {
 
   return (
     <Card className={cn(
-      "fixed bottom-4 right-4 w-80 sm:w-96 h-[85vh] sm:h-[600px] max-h-[600px] shadow-elevated transition-all duration-300 z-50",
+      "fixed bottom-4 right-4 w-80 sm:w-96 h-[90vh] sm:h-[650px] max-h-[650px] shadow-elevated transition-all duration-300 z-50",
       "sm:bottom-6 sm:right-6",
       isMinimized && "h-14 sm:h-16"
     )}>
@@ -192,7 +199,7 @@ export const AIChat = () => {
       {!isMinimized && (
         <CardContent className="p-0 flex flex-col h-full min-h-0">
           {/* Messages Area */}
-          <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-3 sm:space-y-4 bg-background/50 min-h-0">
+          <div className="flex-1 overflow-y-auto p-4 sm:p-5 space-y-4 sm:space-y-5 bg-background/50 min-h-0 max-h-[calc(100%-140px)]">
             {messages.map((message) => (
               <div key={message.id} className={cn(
                 "flex gap-3",
@@ -256,33 +263,41 @@ export const AIChat = () => {
           </div>
 
           {/* Input Area */}
-          <div className="border-t p-3 sm:p-4 bg-card">
-            <div className="flex items-center gap-2">
-              <Input
-                placeholder="Ask about government services..."
-                value={inputMessage}
-                onChange={(e) => setInputMessage(e.target.value)}
-                onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-                className="flex-1 text-xs sm:text-sm"
-              />
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={handleVoiceInput}
-                className={cn(
-                  "transition-smooth",
-                  isListening && "bg-destructive text-destructive-foreground"
-                )}
-              >
-                {isListening ? <MicOff className="h-4 w-4" /> : <Mic className="h-4 w-4" />}
-              </Button>
-              <Button 
-                onClick={handleSendMessage}
-                disabled={!inputMessage.trim()}
-                size="sm"
-              >
-                <Send className="h-4 w-4" />
-              </Button>
+          <div className="border-t p-4 sm:p-5 bg-card">
+            <div className="flex items-end gap-3">
+              <div className="flex-1">
+                <Input
+                  placeholder="Ask about government services... (Press Enter to send)"
+                  value={inputMessage}
+                  onChange={(e) => setInputMessage(e.target.value)}
+                  onKeyDown={handleKeyDown}
+                  className="text-sm sm:text-base h-12 sm:h-14 resize-none"
+                />
+              </div>
+              <div className="flex items-center gap-2">
+                <Button
+                  variant="ghost"
+                  size="lg"
+                  onClick={handleVoiceInput}
+                  className={cn(
+                    "h-12 w-12 sm:h-14 sm:w-14 transition-smooth",
+                    isListening && "bg-destructive text-destructive-foreground"
+                  )}
+                >
+                  {isListening ? <MicOff className="h-5 w-5" /> : <Mic className="h-5 w-5" />}
+                </Button>
+                <Button 
+                  onClick={handleSendMessage}
+                  disabled={!inputMessage.trim()}
+                  size="lg"
+                  className="h-12 w-12 sm:h-14 sm:w-14 gradient-primary"
+                >
+                  <Send className="h-5 w-5" />
+                </Button>
+              </div>
+            </div>
+            <div className="mt-2 text-xs text-muted-foreground text-center">
+              Press Enter to send • Click mic to use voice input
             </div>
           </div>
         </CardContent>

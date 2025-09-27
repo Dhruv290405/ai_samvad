@@ -1,22 +1,20 @@
-# Welcome to your Lovable project
+# Smart E-Governance Portal - Digital India
 
-## Project info
+A comprehensive digital platform for accessing government services online. Built with modern web technologies to provide citizens with secure, transparent, and user-friendly access to essential government services.
 
-**URL**: https://lovable.dev/projects/98275ac2-a6b9-4bec-8568-fa00ef53bf8d
+## Features
 
-## How can I edit this code?
+- **Multi-language Support**: AI-powered translation for 5+ Indian languages
+- **Secure Authentication**: Bank-grade security with government verification
+- **Real-time Updates**: Instant notifications and status tracking
+- **AI Assistant**: Contextual help and guidance
+- **Mobile Responsive**: Optimized for all devices
 
-There are several ways of editing your application.
+## How to run this project locally
 
-**Use Lovable**
+**Prerequisites**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/98275ac2-a6b9-4bec-8568-fa00ef53bf8d) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Make sure you have Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
@@ -60,14 +58,15 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
+## How to deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/98275ac2-a6b9-4bec-8568-fa00ef53bf8d) and click on Share -> Publish.
+This project can be deployed to various platforms:
 
-## Can I connect a custom domain to my Lovable project?
+- **Vercel**: Connect your GitHub repository and deploy automatically
+- **Netlify**: Simple drag-and-drop deployment or GitHub integration
+- **GitHub Pages**: Deploy directly from your repository
+- **Custom Server**: Build with `npm run build` and serve the `dist` folder
 
-Yes, you can!
+## Contributing
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+This is a government initiative project. For contributions, please follow the standard government development guidelines and ensure all changes align with accessibility and security standards.

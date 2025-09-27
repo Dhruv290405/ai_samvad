@@ -11,6 +11,8 @@ import TaxService from './pages/services/TaxService';
 import GrievanceService from './pages/services/GrievanceService';
 import ApplicationsPage from './pages/Applications';
 import TrackStatusPage from './pages/TrackStatus';
+import Login from './pages/Login';
+import Register from './pages/Register';
 import NotFound from './pages/NotFound';
 import { AccessibilityProvider } from './contexts/AccessibilityContext';
 import { LanguageProvider } from './contexts/LanguageContext';
@@ -34,6 +36,8 @@ const App = () => (
               <Route path="/services/grievance" element={<GrievanceService />} />
               <Route path="/applications" element={<ApplicationsPage />} />
               <Route path="/track-status" element={<TrackStatusPage />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Router>
