@@ -7,6 +7,12 @@ A comprehensive e-governance portal with multilingual support for Indian governm
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.6.2-blue)
 ![Vite](https://img.shields.io/badge/Vite-5.4.19-purple)
 
+## User interface 
+![Image 1](https://drive.google.com/uc?export=view&id=1U-9Qbg-TNXqM4PHfkCW7CTuXD6Wj4e5t)
+
+![Image 2](https://drive.google.com/uc?export=view&id=1lOPxVwoMUQdV397kHNnREFJYZNilWXkL)
+
+
 ## 🌟 Features
 
 ### 🔐 Authentication System
@@ -63,12 +69,6 @@ npm i
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
 **Use GitHub Codespaces**
 
 - Navigate to the main page of your repository.
@@ -87,14 +87,6 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How to deploy this project?
-
-This project can be deployed to various platforms:
-
-- **Vercel**: Connect your GitHub repository and deploy automatically
-- **Netlify**: Simple drag-and-drop deployment or GitHub integration
-- **GitHub Pages**: Deploy directly from your repository
-- **Custom Server**: Build with `npm run build` and serve the `dist` folder
 
 ## Contributing
 
