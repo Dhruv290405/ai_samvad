@@ -1,14 +1,43 @@
-# Smart E-Governance Portal - Digital India
+# 🇮🇳 E-Governance Portal - भारत सरकार | Digital India
 
-A comprehensive digital platform for accessing government services online. Built with modern web technologies to provide citizens with secure, transparent, and user-friendly access to essential government services.
+A comprehensive e-governance portal with multilingual support for Indian government services, built with modern web technologies.
 
-## Features
+![Digital India](https://img.shields.io/badge/Digital%20India-Government%20Portal-orange)
+![React](https://img.shields.io/badge/React-18.3.1-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.6.2-blue)
+![Vite](https://img.shields.io/badge/Vite-5.4.19-purple)
 
-- **Multi-language Support**: AI-powered translation for 5+ Indian languages
-- **Secure Authentication**: Bank-grade security with government verification
-- **Real-time Updates**: Instant notifications and status tracking
-- **AI Assistant**: Contextual help and guidance
-- **Mobile Responsive**: Optimized for all devices
+## 🌟 Features
+
+### 🔐 Authentication System
+- **Multiple Login Methods**: Email, Mobile, Aadhaar number
+- **OTP & Password Authentication**: Secure login with government-grade security
+- **3-Step Registration**: Personal info → Details & Password → OTP Verification
+- **Government Integration**: Aadhaar verification, DigiLocker access
+
+### 🌐 Multilingual Support
+Support for **12 Indian Languages**:
+- English 🇬🇧 | हिन्दी (Hindi) | বাংলা (Bengali) | తెలుగు (Telugu)
+- தமிழ் (Tamil) | मराठी (Marathi) | ગુજરાતી (Gujarati) | ಕನ್ನಡ (Kannada)
+- മലയാളം (Malayalam) | ਪੰਜਾਬੀ (Punjabi) | ଓଡ଼ିଆ (Odia) | অসমীয়া (Assamese)
+
+### 🏛️ Government Services
+- **Aadhaar Services**: Update details, download e-Aadhaar, check status
+- **PAN Card Services**: Apply, check status, download e-PAN
+- **Income Tax Filing**: ITR filing, refund status, certificates
+- **Public Grievances**: Register complaints, track status
+- **Digital Certificates**: Official document applications
+
+### 🤖 AI Assistant
+- **Multilingual Chatbot**: Get help in your preferred language
+- **Government Service Guidance**: Step-by-step assistance
+- **Real-time Support**: Instant answers to common queries
+
+### ♿ Accessibility Features
+- **Font Size Control**: Small, Medium, Large, XL options
+- **High Contrast Mode**: Better visibility for users
+- **Screen Reader Support**: Text-to-speech functionality
+- **Keyboard Navigation**: Full accessibility support
 
 ## How to run this project locally
 
